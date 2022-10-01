@@ -15,4 +15,5 @@ Implementation tools:
 
 The CNN model designed can detect the theft of energy at 99% and on the other hand, the blockchain makes it possible  to overcome the attack FDIA.
 
-This project was an end-of-study project for obtaining a master's degree, for more details please see the pdf file
+This project was an end-of-study project for obtaining a master's degree, for more details please see the pdf file ssi_i_001_2022.pdf
+
