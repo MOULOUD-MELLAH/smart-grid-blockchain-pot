@@ -20,13 +20,17 @@ contract Connexions {
         string Name;
         address DcAdd;
     }
-    struct Nan1Block{
+    struct NanBlock{
         uint256[] ListMeter;
         string dateUSe;
         uint256[] ListPower;
         uint256[] ListReputation;
         string merkleRoot;
     }
+
+    NanBlock public BlockNan1;
+    NanBlock public blockNan2;
+
     struct DataConstractor {
         uint256 IDDC;
         string Name;
@@ -34,6 +38,7 @@ contract Connexions {
         address[] MetersList;
 
     }
+
     struct WanBlock{
         uint256[] UseZonePower;
         string dateUseDc;
@@ -42,6 +47,8 @@ contract Connexions {
         uint256[] ListReputationWan;
         string merkleRootWan;
     }
+
+    WanBlock public BlockWan;
     mapping (address => SmartMeter) public Meter;
     mapping (address => DataConstractor) public Dc;
     mapping(address => mapping(address => bool)) public connections;
@@ -101,7 +108,20 @@ contract Connexions {
         require(_from != _to, "Can't Establish connections with self");
         _;
     }
-
+    
+    function tansactionNan1B1(uint256 _ID1, uint256 _ID2,uint256 _ID3, string memory _dateUse, uint256 _Power1, uint256 _Power2, uint256 _Power3, uint256 _Rep1, uint256 _Rep2, uint256 _Rep3, string memory _merkleRoot) public {
+        BlockNan1.ListMeter.push(_ID1);
+        BlockNan1.ListMeter.push(_ID2);
+        BlockNan1.ListMeter.push(_ID2);
+        BlockNan1.dateUSe = _dateUse;
+        BlockNan1.ListPower.push(_Power1);
+        BlockNan1.ListPower.push(_Power2);
+        BlockNan1.ListPower.push(_Power3);
+        BlockNan1.ListReputation.push(_Rep1);
+        BlockNan1.ListReputation.push(_Rep2);
+        BlockNan1.ListReputation.push(_Rep3);
+        BlockNan1.merkleRoot = _merkleRoot;
+    }
     
 }
 

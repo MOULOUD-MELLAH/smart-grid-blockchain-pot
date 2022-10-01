@@ -19,11 +19,11 @@ contract Communications {
         address indexed _from,
         address indexed to,
         uint indexed iteration,
-        string[] amount
+        string amount
         );
 
 
-    function passingValues(address _sender, address _to, uint _iteration, string[] memory _value) public {
+    function passingValues(address _sender, address _to, uint _iteration, string memory _value) public {
         require(maps.connections(_sender,_to),"Connection Not Established");
           emit NewTrade(_sender, _to, _iteration, _value);
     }
